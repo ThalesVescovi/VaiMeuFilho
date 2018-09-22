@@ -1,0 +1,10 @@
+Author:
+Ferdinando Samaria, Andy Harter
+Title:
+Parameterisation of a Stochastic Model for Human Face Identification
+Abstract:
+Recent work on face identification using continuous density Hidden Markov Models (HMMs) has shown that stochastic modelling can be used successfully to encode feature information. When frontal images of faces are sampled using top-bottom scanning, there is a natural order in which the features appear and this can be conveniently be modelled using a top-bottom HMM. However, a top-bottom HMM is characterised by different parameters, the choice of which has so far been based on subjective intuition. This paper presents a set of experimental results in which various HMM parameterisations are analysed.
+Reference:
+Proceedings of 2nd IEEE Workshop on Applications of Computer Vision, Sarasota FL, December 1994
+Text:
+http://www.cl.cam.ac.uk/Research/DTG/publications/public/files/paper.95.2.ps.Z
