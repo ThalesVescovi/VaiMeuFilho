@@ -36,32 +36,32 @@ def separa_itens_treinamento(lstArqHistSuj):
 
 
 def main():
-    arqHistSujeitos = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\base_histogramas_lbp.txt", "r")
-    arqHistTestes = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\teste_histogramas_lbp.txt", "r")
+    arqHistSujeitos = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\base_histogramas_lbp_reduzido.txt", "r")
+    arqHistTestes = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\teste_histogramas_lbp_reduzido.txt", "r")
     # Estrutura: [ [s, f, [h,i,s,t,o,g,r,a,m,a]], [s, f, [h,i,s,t,o,g,r,a,m,a]], [s, f, [h,i,s,t,o,g,r,a,m,a]] ]
     lstArqHistSujeitos = leitura_arquivos(arqHistSujeitos)
     lstArqHistTestes = leitura_arquivos(arqHistTestes)
 
+    lstHist, lstSujeitos = separa_itens_treinamento(lstArqHistSujeitos)
 
     # TREINAMENTO
-    lstHist, lstSujeitos = separa_itens_treinamento(lstArqHistSujeitos)
-    print(lstHist)
-    #print(lstSujeitos)
-    knn = cv2.ml.KNearest_create()
-    knn.train(lstHist, cv2.ml.ROW_SAMPLE, lstSujeitos)   # knn.train(trainData, responses)
 
+    knn = cv2.ml.KNearest_create()
+    knn.train(lstHist, cv2.ml.ROW_SAMPLE, lstSujeitos)  #knn.train(lstHist, lstSujeitos)
+    print(lstHist)
+    print(lstSujeitos)
 
     #CLASSIFICAÇÃO
     #testeSet = random.choice(lstArqHistTestes)
-    testeSet = np.array(lstArqHistTestes[14][2], dtype=np.float32)  # Em Teste: Sujeito 14; face 4;
+    testeSet = np.array([lstArqHistTestes[2][2]], dtype=np.float32)  # Em Teste: Sujeito 14; face 4;
     print(testeSet)
 
     ret, results, neighbours, dist = knn.findNearest(testeSet, 3)
 
-    # print("ret: ", ret, "\n")
-    # print("result: ", results, "\n")
-    # print("neighbours: ", neighbours, "\n")
-    # print("distance: ", dist)
+    print("ret: ", ret, "\n")
+    print("result: ", results, "\n")
+    print("neighbours: ", neighbours, "\n")
+    print("distance: ", dist)
 
 
     # return results.reshape(1, len(results))[0].astype(int)
