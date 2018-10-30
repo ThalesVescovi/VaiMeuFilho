@@ -26,8 +26,8 @@ def get_vizinho(img, idx, idy, default=0):
 
 def main():
     #imgcolorida = cv2.imread('C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\images\\arnie_20_20_200_200.jpg', cv2.IMREAD_COLOR)
-    img = cv2.imread('C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\code_old\\images\\arnie_20_20_200_200.jpg', cv2.IMREAD_GRAYSCALE)
-    imgLimiarizada = cv2.imread('C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\code_old\\images\\arnie_20_20_200_200.jpg', cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread('C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\trash\\images\\arnie_20_20_200_200.jpg', cv2.IMREAD_GRAYSCALE)
+    imgLimiarizada = cv2.imread('C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\trash\\images\\arnie_20_20_200_200.jpg', cv2.IMREAD_GRAYSCALE)
 
     lstHistograma = [0] * 256
     pesos = [1, 2, 4, 8, 16, 32, 64, 128]

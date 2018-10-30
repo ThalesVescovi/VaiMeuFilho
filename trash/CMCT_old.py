@@ -41,7 +41,7 @@ def main():
             bottom_right = get_vizinho(img, x+1, y+1)
 
             media = (int(top_left) + int(top_up) + int(top_right) + int(right) + int(center) + int(left) + int(bottom_left) + int(bottom_down) + int(bottom_right) ) // 9
-            lstVizinhosBin = comparacompara_vizinhosVizinhos(media, [top_left, top_up, top_right, right, center, left, bottom_left, bottom_down, bottom_right])
+            lstVizinhosBin = compara_vizinhos(media, [top_left, top_up, top_right, right, center, left, bottom_left, bottom_down, bottom_right])
 
             #print(str(top_left)+' '+str(top_up)+' '+str(top_right)+' '+str(right)+' '+str(center)+' '+str(left)+' '+str(bottom_left)+' '+str(bottom_down)+' '+str(bottom_right))
             #print(media)

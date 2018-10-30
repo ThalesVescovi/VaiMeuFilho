@@ -31,8 +31,8 @@ def separa_itens_treinamento(lstArqHistSuj):
 
 
 def main():
-    arqHistSujeitos = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\base_histogramas_lbp.txt", "r")
-    arqHistTestes = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\teste_histogramas_lbp.txt", "r")
+    arqHistSujeitos = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\base_histogramas_mct8.txt", "r")
+    arqHistTestes = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\teste_histogramas_mct8.txt", "r")
     # Estrutura: [ [s, f, [h,i,s,t,o,g,r,a,m,a]], [s, f, [h,i,s,t,o,g,r,a,m,a]], [s, f, [h,i,s,t,o,g,r,a,m,a]] ]
     lstArqHistSujeitos = leitura_arquivos(arqHistSujeitos)
     lstArqHistTestes = leitura_arquivos(arqHistTestes)
@@ -46,7 +46,7 @@ def main():
     print(lstSujeitos)
 
     #CLASSIFICAÇÃO
-    testeSet = np.array([lstArqHistTestes[14-1][2]], dtype=np.float32)  # Em Teste: Sujeito 14; face 4;
+    testeSet = np.array([lstArqHistTestes[14-1][2]], dtype=np.float32)  # Em Teste: Sujeito ; face ;
     ret, results, neighbours, dist = knn.findNearest(testeSet, 3)
     print("ret: ", ret, "\n")
     print("result: ", results, "\n")
