@@ -16,8 +16,10 @@ def main():
         chaveSujeitoTeste = np.random.randint(1, 11)  # indice da chave usada para teste altera a cada sujeito lido
         for faceNum in range(1, 11):
             path = ('C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces\\s' + str(sujeitoNum) + '\\' + str(faceNum) + '.pgm')
+
             img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-            hist = cmct.cmct_function(img)
+            imgLimiarizada = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+            hist = cmct.cmct_function(img, imgLimiarizada)
             if (faceNum != chaveSujeitoTeste):
                 arqHistSujeitos.write(str(sujeitoNum)+';'+str(faceNum)+';'+str(hist)+'\n')
             else:

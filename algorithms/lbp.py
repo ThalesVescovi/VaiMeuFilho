@@ -23,7 +23,7 @@ def get_vizinho(img, idx, idy, default=0):
 
 def lbp_function(img):
     lstHistograma = [0] * 256
-    pesos = [1, 2, 4, 8, 16, 32, 64, 128]
+    pesos = [1, 2, 4, 8, 16, 32, 64, 128]       # Define ordem que será contado os valores dos bits
     for x in range(0, len(img)):
         for y in range(0, len(img[0])):
             center = img[x, y]
@@ -35,7 +35,7 @@ def lbp_function(img):
             bottom_down = get_vizinho(img, x, y + 1)
             bottom_left = get_vizinho(img, x - 1, y + 1)
             left = get_vizinho(img, x - 1, y)
-            # Verificacao circular
+            # Verificacao circular com pixel central
             lstVizinhosBin = compara_vizinhos(center, [top_left, top_up, top_right, right, bottom_right, bottom_down, bottom_left, left])
             # Passando lista para decimal
             vlrDecimal = 0
