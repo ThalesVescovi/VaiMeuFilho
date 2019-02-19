@@ -45,9 +45,9 @@ def main():
     print(lstHist)
     print(lstSujeitos)
 
-    #CLASSIFICAÇÃO
-    testeSet = np.array([lstArqHistTestes[14-1][2]], dtype=np.float32)  # Em Teste: Sujeito 14; face 4;
-    ret, results, neighbours, dist = knn.findNearest(testeSet, 3)
+    #CLASSIFICAÇÃO          lstArqHistTestes[14-1][2] = histograma
+    testeSet = np.array([lstArqHistTestes[3-1][2]], dtype=np.float32)  # Em Teste: Sujeito 3; face 7;
+    ret, results, neighbours, dist = knn.findNearest(testeSet, 5)
     print("ret: ", ret, "\n")
     print("result: ", results, "\n")
     print("neighbours: ", neighbours, "\n")
