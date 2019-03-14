@@ -19,7 +19,9 @@ def get_vizinho(img, idx, idy, default=0):
         return default
 
 
-def cmct_function(img, imgLimiarizada):
+def cmct_function(img):
+    imgLimiarizada = img    #Inicia imgLimiarizada como a imagem comum
+
     media = 0
     lstHistogramaA = [0] * 256                  # De 0 a 255
     lstHistogramaB = [0] * 256                  # De 256 a 511
