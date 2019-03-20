@@ -35,6 +35,9 @@ def main():
     lstAlgoritmos = ["lbp", "mct8", "cmct"]
 
     for algoritmo in lstAlgoritmos:
+        acertosknn3 = 0
+        acertosknn5 = 0
+        acertosknn7 = 0
 
         arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\histogramas_" + algoritmo + ".txt", "r")
         # Estrutura: { sf: [h,i,s,t,o,g,r,a,m,a],  sf: [h,i,s,t,o,g,r,a,m,a],  sf: [h,i,s,t,o,g,r,a,m,a] }
@@ -72,15 +75,23 @@ def main():
             resposta = histTestes[0]
 
             ret, results, neighbours, dist = knn.findNearest(testeSet, 3)
+            if (str(int(ret)) == str(resposta)) : acertosknn3 += 1
             arqResults.write("(Face "+str(faceTeste)+") knn3: "+str(resposta)+ "; "+str(int(ret))+"; "+str(results)+"; "+str(neighbours)+"; "+str(dist)+'\n')
+
             ret, results, neighbours, dist = knn.findNearest(testeSet, 5)
+            if (str(int(ret)) == str(resposta)): acertosknn5 += 1
             arqResults.write("(Face "+str(faceTeste)+") knn5: "+str(resposta)+ "; "+str(int(ret))+"; "+str(results)+"; "+str(neighbours)+"; "+str(dist)+'\n')
+
             ret, results, neighbours, dist = knn.findNearest(testeSet, 7)
+            if (str(int(ret)) == str(resposta)): acertosknn7 += 1
             arqResults.write("(Face "+str(faceTeste)+") knn7: "+str(resposta)+ "; "+str(int(ret))+"; "+str(results)+"; "+str(neighbours)+"; "+str(dist)+'\n')
-            print("Face " + str(faceTeste) + " testado com " + algoritmo)
+            #print("Face " + str(faceTeste) + " testado com " + algoritmo)
         #end for faceTeste
 
-        print("---------------- FIM TESTE " + algoritmo + " ------------------")
+        print("(" + str(algoritmo) + ") " + "knn3: " + str(acertosknn3) + " acertos de 400.  Acurácia: " + str((acertosknn3 / 400) * 100) + "%")
+        print("(" + str(algoritmo) + ") " + "knn5: " + str(acertosknn5) + " acertos de 400.  Acurácia: " + str((acertosknn5 / 400) * 100) + "%")
+        print("(" + str(algoritmo) + ") " + "knn7: " + str(acertosknn7) + " acertos de 400.  Acurácia: " + str((acertosknn7 / 400) * 100) + "%")
+        print("\n")
 
         arqResults.close()
     #end for algoritmo
