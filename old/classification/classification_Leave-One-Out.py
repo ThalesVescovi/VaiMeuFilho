@@ -39,12 +39,12 @@ def main():
         acertosknn5 = 0
         acertosknn7 = 0
 
-        arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\histogramas_" + algoritmo + ".txt", "r")
+        arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces_histogramas\\histogramas_" + algoritmo + ".txt", "r")
         # Estrutura: { sf: [h,i,s,t,o,g,r,a,m,a],  sf: [h,i,s,t,o,g,r,a,m,a],  sf: [h,i,s,t,o,g,r,a,m,a] }
         dicHistogramas = leitura_arquivos(arqHistogramas)
         arqHistogramas.close()
 
-        arqResults = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\results\\leave-one-out_knn_" + algoritmo + ".txt", "w")
+        arqResults = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces_results\\leave-one-out_knn_" + algoritmo + ".txt", "w")
         print("---------------- TESTE " + algoritmo + " ------------------")
 
         for faceTeste in range(1, 401):

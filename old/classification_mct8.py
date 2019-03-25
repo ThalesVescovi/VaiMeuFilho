@@ -31,8 +31,8 @@ def separa_itens_treinamento(lstArqHistSuj):
 
 
 def main():
-    arqHistSujeitos = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\base_histogramas_mct8.txt", "r")
-    arqHistTestes = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\teste_histogramas_mct8.txt", "r")
+    arqHistSujeitos = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces_histogramas\\base_histogramas_mct8.txt", "r")
+    arqHistTestes = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces_histogramas\\teste_histogramas_mct8.txt", "r")
     # Estrutura: [ [s, f, [h,i,s,t,o,g,r,a,m,a]], [s, f, [h,i,s,t,o,g,r,a,m,a]], [s, f, [h,i,s,t,o,g,r,a,m,a]] ]
     lstArqHistSujeitos = leitura_arquivos(arqHistSujeitos)
     lstArqHistTestes = leitura_arquivos(arqHistTestes)

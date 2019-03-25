@@ -7,10 +7,10 @@ import psycopg2
 
 
 def main():
-    arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\histogramas_lbp.txt", "w")
-
     print('---------- LBP ----------')
     print('EXTRAINDO CARACTERISTICAS')
+
+    arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces_histogramas\\histogramas_lbp.txt.txt", "w")
 
     for sujeitoNum in range(1, 41):
         for faceNum in range(1, 11):

@@ -7,7 +7,7 @@ import psycopg2
 
 
 def main():
-    arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\histograms\\histogramas_mct8.txt", "w")
+    arqHistogramas = open("C:\\Users\\thale\\PycharmProjects\\VaiMeuFilho\\bd_projeto\\att_faces_histogramas\\histogramas_mct8.txt", "w")
 
     print('--------- MCT8 ---------')
     print('EXTRAINDO CARACTERISTICAS')
